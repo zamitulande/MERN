@@ -37,5 +37,15 @@ const autenticar = async (req, res)=>{
         return res.status(403).json({msg: error.message});
     }
     //COMPROBAR EL PASSWORD
+    if(await usuario.comprobarPassword(password)){
+       res.json({
+           _id : usuario._id,
+           nomre : usuario.nombre,
+           email : usuario.email,
+       })
+    }else{
+        const error = new Error('El password es incorrrecto');
+        return res.status(403).json({msg: error.message});
+    }
 };
 export {registrar, autenticar};
