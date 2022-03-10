@@ -111,4 +111,8 @@ const nuevoPassword = async (req, res)=>{
         return res.status(404).json({msg: error.message});
     }
 };
-export {registrar, autenticar, confirmar, olvidePassword, comprobarToken, nuevoPassword};
+const perfil = async (req, res)=>{
+   const {usuario}= req;
+   res.json(usuario)
+};
+export {registrar, autenticar, confirmar, olvidePassword, comprobarToken, nuevoPassword, perfil};
