@@ -10,6 +10,7 @@
 
  //Routing
  app.use('/api/usuarios', usuarioRoutes);
+ app.use('/api/proyectos', usuarioRoutes);
 
 const PORT = process.env.PORT || 4000;
 
