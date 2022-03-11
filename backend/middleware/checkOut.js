@@ -16,7 +16,7 @@ const checkOut = async (req, res, next)=>{
     }
     if(!token){
         const error = new Error ('Token no valido');
-        res.status(401).json(({meg: error.message}))
+        return res.status(401).json(({meg: error.message}))
     }
     next()
 };
